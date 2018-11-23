@@ -1,0 +1,39 @@
+<%= render partial: 'team_tabs', locals: {team: @team, user: @team.user} %>
+
+<h4>Roster</h4>
+<table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Height</th>
+        <th>Wingspan</th>
+        <% if @team.user.id.to_i == current_user.id.to_i %>
+        <th>Trade</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @team.players.each do |player| %>
+
+
+        <td class="text-left"><%= player.number %></td>
+        <td class="text-left"><%= link_to player.name, player %></td>
+        <td class="text-left"><%= player.position %></td>
+        <td class="text-left"><%= player.height %></td>
+        <td class="text-left"><%= player.wingspan %></td>
+        <% if @team.user.id.to_i == current_user.id.to_i %>
+        <td>
+          <%= form_tag(edit_team_players_path(@team),  :method => "get") do %>
+              <%= hidden_field_tag :player_id, player.id %>
+              <%= submit_tag "Trade"%>
+          <% end %>
+        </td>
+        <% end %>
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>

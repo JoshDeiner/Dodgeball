@@ -1,0 +1,16 @@
+<div class="container text-center">
+
+  <div class="well">
+    <h1 class="red dodgeball"><%= @player.name %> #<%= @player.number %></h1>
+    <%= image_tag @player.image_url, class: "img-rounded", style: "height: 300px;"%>
+
+
+    <h3><p>Position: <%= @player.position.capitalize %></p></h3>
+    <p>Height: <%= @player.height %></p>
+    <p>Wingspan: <%= @player.wingspan %> in</p>
+
+    <%= link_to "See All Players", players_path, class: "red" %>
+
+  </div>
+
+</div>
