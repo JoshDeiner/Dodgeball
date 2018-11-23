@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+.dodgeball {
+  font-family: 'Shrikhand', cursive;
+}
+
+.red {
+  color: rgb(189,53,50);
+}
+
+a.red:hover {
+  color: rgb(121, 34, 32);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.white{
+  color: rgb(255,255,255);
+}
+
+.red-bg{
+  background-color: rgb(189,53,50);
+}
+.white-bg{
+  background-color: rgb(255, 255, 255);
+}
+
+.wood-bg{
+  background-image: url('wood-floor');
+}
+
+.search-form{
+  padding-left: 50rem;
+  padding-right: 40rem;
+}
+
+.movement {
+  margin: auto;
+
+}
+
+.sign-up{
+  padding-right: 100rem;
+  padding-left: 25rem;
+}
